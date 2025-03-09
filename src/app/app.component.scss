@@ -1,0 +1,79 @@
+.navBar {
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    a {
+        color: white;
+        padding: 10px;
+    }
+}
+
+.container {
+    background: radial-gradient(circle, #0020ad 0%, #0066ff 30%, #9932ee 70%, #6720a1 100%);
+    display: flex;
+    padding: 1vh 0vw;
+    height: 80vh;
+    .column {
+        display: flex;
+        flex-direction: row;
+//            background-color: #ea00ff;
+//            padding: 10px;
+        flex: 1;
+    }
+
+    .menu {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        background-color: #c9c9c9;
+        .buttonTabBar {
+            //background-color: #333;
+            color: #333;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            text-align: left;
+            cursor: pointer;
+        }
+    }
+
+    .infornation {
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+        width: 30%;
+        background-color: #dfdfdf;
+        color: #333;
+
+        .imageCardsHome {
+            width: 30vh;
+            height: 30vh;
+            border-radius: 10px;
+        }
+    }
+
+    .exampleCards {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #c9c9c9;
+        color: white;
+        .cardRed {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        .cardBlue {
+            background-color: #0000ff;
+            color: white;
+        }
+
+        .cardBrown {
+            background-color: #8b4513;
+            color: white;
+        }
+    }
+}
