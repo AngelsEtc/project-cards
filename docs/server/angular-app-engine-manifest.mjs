@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/project-cards',
+  basePath: 'project-cards',
   supportedLocales: {
   "en-US": ""
 },
