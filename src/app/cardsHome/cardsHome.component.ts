@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cardsHome.component.scss']
 })
 export class CardsHomeComponent implements OnInit {
-imagePathCardChick404: string = '/image/chick404.jpg';
+imagePathCardChick404: string = '/docs/image/chick404.jpg';
 imagePathCardKarobamio: string = '/image/karobamio.jpg';
 imagePathCardOkamivt: string = '/image/okamivt.jpg';
 
