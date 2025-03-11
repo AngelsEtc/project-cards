@@ -61,6 +61,10 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "gh-pages": {
+              "outputPath": "docs/browser",
+              "baseHref": "https://angelsetc.github.io/project-cards/"
             }
           },
           "defaultConfiguration": "production"
