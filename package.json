@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "serve:ssr:project-cards": "node dist/project-cards/server/server.mjs"
   },
   "private": true,
