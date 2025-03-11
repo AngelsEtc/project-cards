@@ -1,18 +1,3 @@
-
-.navBar {
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    justify-content: flex-end;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    a {
-        cursor: pointer;
-        color: white;
-        padding: 10px;
-    }
-}
-
 .container {
     background: radial-gradient(circle, #0020ad 0%, #0066ff 30%, #9932ee 70%, #6720a1 100%);
     display: flex;
@@ -21,8 +6,6 @@
     .column {
         display: flex;
         flex-direction: row;
-        //            background-color: #ea00ff;
-        //            padding: 10px;
         flex: 1;
     }
 
@@ -46,7 +29,7 @@
         text-align: center;
         justify-content: center;
         padding: 10px;
-        width: 30%;
+        width: 45%;
         background-color: #dfdfdf;
         color: #333;
 
@@ -55,5 +38,14 @@
             height: 30vh;
             border-radius: 10px;
         }
+    }
+    .cardsHome {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 35%;
+        background-color: #6d6d6d60;
     }
 }

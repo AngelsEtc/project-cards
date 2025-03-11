@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { HomePageComponent } from './homePage/homePage.component';
+import { CardsHomeComponent } from './cardsHome/cardsHome.component';
 
 @Component({
   selector: 'app-root',
-//  imports: [RouterOutlet],
+  imports: [HomePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     background-color: #dfdfdf;
-
+    font-family: "Roboto", sans-serif;
     height: 100%;
     margin: 10px;
     display: flex;
@@ -12,7 +16,7 @@ body {
     footer {
         background-color: #333;
         color: white;
-        padding: 1px;
+        padding: 10px;
         text-align: center;
         border-radius: 0 0 10px 10px;
     }
