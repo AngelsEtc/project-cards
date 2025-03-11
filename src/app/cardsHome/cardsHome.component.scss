@@ -15,6 +15,7 @@
     position: absolute;
     align-items: center;
     justify-content: center;
+    
   }
   img{
     border-radius: 10px;
@@ -22,18 +23,43 @@
   .cardFirst {
     color: white;
     z-index: 1;
-    transform: translate3d(-10vh, -15vh, 0)rotate(-10deg);
+    
+    animation: cardFirstAnimation 3s infinite alternate ease-in-out;
+    @keyframes cardFirstAnimation {
+      from {
+        transform: translate3d(-10vh, -15vh, 0vh)rotate(-0deg);
+      }
+      to {
+        transform: translate3d(-10vh, -15vh, 0)rotate(-3deg);
+      }
+    }
   }
 
   .cardSecond {
     color: white;
     z-index: 2;
-    transform: translateX(10vh)rotate(10deg);
+    animation: cardSecondAnimation 3s infinite alternate ease-in-out;
+    @keyframes cardSecondAnimation {
+      from {
+        transform: translateX(10vh)rotate(3deg);
+      }
+      to {
+        transform: translateX(10vh)rotate(6deg);
+      }
+    }
   }
 
   .cardThird {
     color: white;
     z-index: 3;
-    transform: translate3d(-10vh, 15vh, 0)rotate(-10deg);
+    animation: cardThirdAnimation 3s infinite alternate ease-in-out;
+    @keyframes cardThirdAnimation {
+      from {
+        transform: translate3d(-10vh, 15vh, 0)rotate(-6deg);
+      }
+      to {
+        transform: translate3d(-10vh, 15vh, 0)rotate(-9deg);
+      }
+    }
   }
 }
