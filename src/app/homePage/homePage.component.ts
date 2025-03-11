@@ -8,6 +8,7 @@ import { CardsHomeComponent } from '../cardsHome/cardsHome.component';
   imports: [CardsHomeComponent]
 })
 export class HomePageComponent implements OnInit {
+imagePathCardsHome: string = '/image/imagecardshome.png';
 
   constructor() { }
 

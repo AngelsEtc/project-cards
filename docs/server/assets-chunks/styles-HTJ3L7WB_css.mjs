@@ -1,2 +1,0 @@
-export default `body{background-color:#dfdfdf;height:100%;margin:10px;display:flex;flex-direction:column}@media (max-width: 600px){body{padding:5px}}body footer{background-color:#333;color:#fff;padding:1px;text-align:center;border-radius:0 0 10px 10px}body::-webkit-scrollbar{width:7px}body::-webkit-scrollbar-track{background:none}body::-webkit-scrollbar-thumb{background:linear-gradient(45deg,#0020ad,#06f,#9932ee,#6720a1);border-radius:10px;border:1px solid #dfdfdf}
-`;
