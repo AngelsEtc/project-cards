@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CardsHomeComponent implements OnInit {
   ngOnInit(): void {
     // Inicialização se necessário
+    if (typeof window !== 'undefined') {
+      this.preloadImages(); // Chama o método para carregar as imagens, apenas no cliente
+    }
   }
+
   imageCategories: Record<string, string[]> = {
     purple: [
       'image/chick404.jpg',
@@ -37,6 +41,10 @@ export class CardsHomeComponent implements OnInit {
     ],
   };
 
+  randomImageFirst: string;
+  randomImageSecond: string;
+  randomImageThird: string;
+
   // Método para pegar uma categoria aleatória
   getRandomCategory(excludeCategories: string[] = []): string {
     const categories = Object.keys(this.imageCategories).filter(category => !excludeCategories.includes(category));
@@ -49,10 +57,24 @@ export class CardsHomeComponent implements OnInit {
     return images[Math.floor(Math.random() * images.length)];
   }
 
-  // Lógica para pegar imagens de categorias diferentes
-  randomImageFirst: string;
-  randomImageSecond: string;
-  randomImageThird: string;
+  // Método para pré-carregar todas as imagens
+  preloadImages(): void {
+    const allImages: string[] = [];
+    // Recolher todas as imagens de todas as categorias
+    for (const category in this.imageCategories) {
+      if (this.imageCategories.hasOwnProperty(category)) {
+        allImages.push(...this.imageCategories[category]);
+      }
+    }
+    
+    // Pré-carregar as imagens
+    allImages.forEach(imageSrc => {
+      if (typeof window !== 'undefined') {
+        const img = new Image();
+        img.src = imageSrc;
+      }
+    });
+  }
 
   constructor() {
     // Escolher uma categoria aleatória para o primeiro cartão
