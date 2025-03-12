@@ -11,6 +11,6 @@ export default `<!doctype html>
 <style>*{margin:0;padding:0}body{background-color:#dfdfdf;font-family:Roboto,sans-serif;height:100%;margin:10px;display:flex;flex-direction:column}@media (max-width: 600px){body{padding:5px}}body::-webkit-scrollbar{width:7px}body::-webkit-scrollbar-track{background:none}body::-webkit-scrollbar-thumb{background:linear-gradient(45deg,#0020ad,#06f,#9932ee,#6720a1);border-radius:10px;border:1px solid #dfdfdf}</style><link rel="stylesheet" href="styles-J74X3WS3.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-J74X3WS3.css"></noscript></head>
 <body class="mat-typography" ngcm="">
   <app-root></app-root>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-5SWK2EGF.js" type="module"></script></body>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-YMC7RDNE.js" type="module"></script></body>
 </html>
 `;
