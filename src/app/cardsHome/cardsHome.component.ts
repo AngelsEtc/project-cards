@@ -7,34 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsHomeComponent implements OnInit {
   ngOnInit(): void {
-     // Inicialização se necessário
+    // Inicialização se necessário
   }
   imageCategories: Record<string, string[]> = {
     purple: [
-    'image/chick404.jpg',
-    'image/hanakoawing.jpg',
-    'image/racoona.jpg',
+      'image/chick404.jpg',
+      'image/hanakoawing.jpg',
+      'image/racoona.jpg',
     ],
     pink: [
-    'image/okamivt.jpg',
-    'image/jessikirby.jpg',
-    'image/faerisami.jpg',
+      'image/okamivt.jpg',
+      'image/jessikirby.jpg',
+      'image/faerisami.jpg',
     ],
     green: [
-    'image/kurobamio.jpg',
-    'image/jinkoshirou.jpg',
-    'image/melkhill.jpg',
+      'image/kurobamio.jpg',
+      'image/jinkoshirou.jpg',
+      'image/melkhill.jpg',
     ],
     blue: [
       'image/choconekomenta.jpg',
       'image/naota.jpg',
       'image/akayton.jpg',
-      ],
+    ],
     yellow: [
       'image/arderianlun.jpg',
       'image/omurice.jpg',
       'image/mijorin.jpg',
-      ],
+    ],
   };
 
   // Método para pegar uma categoria aleatória
