@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://angelsetc.github.io/project-cards',
+  basePath: 'project-cards',
   supportedLocales: {
   "en-US": ""
 },
