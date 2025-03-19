@@ -1,92 +1,56 @@
+import { RouterModule } from '@angular/router'; // Import RouterModule
 import { Component, OnInit } from '@angular/core';
+import { imageCategories, ImageData } from '../../../public/data/imageData';
 
 @Component({
   selector: 'app-cardsHome',
+  standalone: true,
   templateUrl: './cardsHome.component.html',
-  styleUrls: ['./cardsHome.component.scss']
+  styleUrls: ['./cardsHome.component.scss'],
+  imports: [RouterModule] 
 })
 export class CardsHomeComponent implements OnInit {
+  randomImageFirst: ImageData = { id :'', name: '', link: '#', photo: '', tags: [], description: '' };
+  randomImageSecond: ImageData = { id :'', name: '', link: '#', photo: '', tags: [], description: '' };
+  randomImageThird: ImageData = { id :'', name: '', link: '#', photo: '', tags: [], description: '' };
+
+  constructor() {}
+
   ngOnInit(): void {
-    // Inicialização se necessário
     if (typeof window !== 'undefined') {
-      this.preloadImages(); // Chama o método para carregar as imagens, apenas no cliente
+      this.preloadImages();
     }
+
+    const uniqueTags = this.getUniqueTags();
+    const tagFirst = uniqueTags[Math.floor(Math.random() * uniqueTags.length)];
+    this.randomImageFirst = this.getRandomImageByTag(tagFirst) || { id :'', name: '', link: '#', photo: '', tags: [], description: '' };
+
+    const tagSecond = uniqueTags.filter(tag => tag !== tagFirst)[Math.floor(Math.random() * (uniqueTags.length - 1))];
+    this.randomImageSecond = this.getRandomImageByTag(tagSecond, [this.randomImageFirst]) || { id :'', name: '', link: '#', photo: '', tags: [], description: '' };
+
+    const tagThird = uniqueTags.filter(tag => tag !== tagFirst && tag !== tagSecond)[Math.floor(Math.random() * (uniqueTags.length - 2))];
+    this.randomImageThird = this.getRandomImageByTag(tagThird, [this.randomImageFirst, this.randomImageSecond]) || { id :'', name: '', link: '#', photo: '', tags: [], description: '' };
   }
 
-  imageCategories: Record<string, string[]> = {
-    purple: [
-      'image/chick404.jpg',
-      'image/hanakoawing.jpg',
-      'image/racoona.jpg',
-    ],
-    pink: [
-      'image/okamivt.jpg',
-      'image/jessikirby.jpg',
-      'image/faerisami.jpg',
-    ],
-    green: [
-      'image/kurobamio.jpg',
-      'image/jinkoshirou.jpg',
-      'image/melkhill.jpg',
-    ],
-    blue: [
-      'image/choconekomenta.jpg',
-      'image/naota.jpg',
-      'image/akayton.jpg',
-    ],
-    yellow: [
-      'image/arderianlun.jpg',
-      'image/omurice.jpg',
-      'image/mijorin.jpg',
-    ],
-  };
-
-  randomImageFirst: string;
-  randomImageSecond: string;
-  randomImageThird: string;
-
-  // Método para pegar uma categoria aleatória
-  getRandomCategory(excludeCategories: string[] = []): string {
-    const categories = Object.keys(this.imageCategories).filter(category => !excludeCategories.includes(category));
-    return categories[Math.floor(Math.random() * categories.length)];
+  getUniqueTags(): string[] {
+    const allImages = Object.values(imageCategories).flat();
+    const allTags = allImages.flatMap(img => img.tags);
+    return Array.from(new Set(allTags));
   }
 
-  // Método para pegar uma imagem aleatória de uma categoria
-  getRandomImageFromCategory(category: string): string {
-    const images = this.imageCategories[category];
-    return images[Math.floor(Math.random() * images.length)];
+  getRandomImageByTag(tag: string, excludeImages: ImageData[] = []): ImageData | null {
+    const allImages = Object.values(imageCategories).flat();
+    const filteredImages = allImages.filter(img => img.tags.includes(tag) && !excludeImages.includes(img));
+    return filteredImages.length ? filteredImages[Math.floor(Math.random() * filteredImages.length)] : null;
   }
 
-  // Método para pré-carregar todas as imagens
   preloadImages(): void {
-    const allImages: string[] = [];
-    // Recolher todas as imagens de todas as categorias
-    for (const category in this.imageCategories) {
-      if (this.imageCategories.hasOwnProperty(category)) {
-        allImages.push(...this.imageCategories[category]);
-      }
-    }
-    
-    // Pré-carregar as imagens
+    const allImages = Object.values(imageCategories).flat().map(img => img.photo);
     allImages.forEach(imageSrc => {
       if (typeof window !== 'undefined') {
         const img = new Image();
         img.src = imageSrc;
       }
     });
-  }
-
-  constructor() {
-    // Escolher uma categoria aleatória para o primeiro cartão
-    const categoryFirst = this.getRandomCategory();
-    this.randomImageFirst = this.getRandomImageFromCategory(categoryFirst);
-
-    // Escolher uma categoria aleatória para o segundo cartão, diferente do primeiro
-    const categorySecond = this.getRandomCategory([categoryFirst]);
-    this.randomImageSecond = this.getRandomImageFromCategory(categorySecond);
-
-    // Escolher uma categoria aleatória para o terceiro cartão, diferente das duas anteriores
-    const categoryThird = this.getRandomCategory([categoryFirst, categorySecond]);
-    this.randomImageThird = this.getRandomImageFromCategory(categoryThird);
   }
 }

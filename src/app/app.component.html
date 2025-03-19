@@ -1,13 +1,17 @@
-
 <body>
-  <Nav class="navBar">
+  <nav class="navBar">
     <a routerLink="/home" routerLinkActive="active">Home</a>
     <a routerLink="/cards" routerLinkActive="active">Cards</a>
     <a routerLink="/about" routerLinkActive="active">About</a>
-</Nav>
-<section>
-  <app-homePage>
-  </app-homePage>
-</section>
-<footer><h5>Cards Vtubers 2025</h5></footer>
+  </nav>
+
+  <section>
+    <router-outlet></router-outlet> 
+  </section>
+
+  <h3 class="screen">Site temporariamente apenas para telas grandes</h3>
+
+  <footer>
+    <h5>Cards Vtubers 2025</h5>
+  </footer>
 </body>

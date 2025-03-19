@@ -1,0 +1,17 @@
+.card-detail-page {
+  background: radial-gradient(circle, #0020ad 0%, #0066ff 30%, #9932ee 70%, #6720a1 100%);
+  display: flex;
+  padding: 1vh 0vw;
+}
+
+.card-detail-container {
+  width: 100%;
+  display: flex;
+  justify-content:space-evenly ;
+  background-color: #c9c9c9;
+  box-sizing: border-box;
+  padding: 5vh;
+}
+.card-detail-image{
+  width: 50vh;
+}

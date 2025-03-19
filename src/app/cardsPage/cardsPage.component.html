@@ -1,0 +1,14 @@
+<div class="container">
+<div class="menu">
+  <div *ngFor="let image of allImages; trackBy: trackByImage" class="card-item">
+    <a [routerLink]="['/cardpage', image.id]" class="card-link">
+      <img [src]="image.photo" [alt]="image.name" class="card-image">
+    </a>
+    <div class="card-details">
+      <h3 class="card-title">{{ image.id }}</h3>
+      <p class="card-description">{{ image.description }}</p>
+      <span class="card-tags">Tags: {{ image.tags.join(', ') }}</span>
+    </div>
+  </div>
+</div>
+</div>

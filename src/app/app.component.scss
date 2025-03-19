@@ -9,7 +9,11 @@
         cursor: pointer;
         color: white;
         padding: 10px;
+        text-decoration: none;
     }
+}
+.screen {
+  display: none;
 }
 @media screen and (max-width: 768px) {
     .navBar {
@@ -21,4 +25,17 @@
       text-align: center;
     }
   }
-  
+  @media screen and (max-width: 1380px) {
+    .screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+    }
+    section {
+        display: none;
+    }
+
+}

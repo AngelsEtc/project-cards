@@ -1,0 +1,10 @@
+<div class="card-detail-page">
+  <div class="card-detail-container">
+    <img *ngIf="selectedImage" [src]="selectedImage.photo" [alt]="selectedImage.name" class="card-detail-image">
+    <div class="card-detail-content" *ngIf="selectedImage">
+      <h2 class="card-detail-title">{{ selectedImage.name }}</h2>
+      <p class="card-detail-description">{{ selectedImage.description }}</p>
+      <span class="card-detail-tags">Tags: {{ selectedImage.tags.join(', ') }}</span>
+    </div>
+  </div>
+</div>

@@ -49,25 +49,15 @@
         width: 35%;
     }
 }
-.screen {
-    display: none;
-}
-@media screen and (max-width: 1380px) {
-    .screen {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        width: 100%;
-        height: 100%;
-    }
-    .menu {
-        display: none;
-    }
-    .container {
-        display: none;
-    }
-    .cardsHome {
-        display: none;
-    }
-}
+
+mat-tree {
+    margin-left: 20px;
+  }
+  
+  mat-tree-node, mat-nested-tree-node {
+    padding: 5px;
+  }
+  
+  mat-nested-tree-node {
+    font-weight: bold;
+  }

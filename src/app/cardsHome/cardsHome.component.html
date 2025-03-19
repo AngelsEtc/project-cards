@@ -1,11 +1,17 @@
-<div class="exampleCards"> 
-  <div id="card" class="cardFirst" >
-          <img [src]="randomImageFirst" alt="cardFirst" class="randomImagePath">
+<div class="exampleCards">
+  <div id="card" class="cardFirst">
+    <a [routerLink]="['/cardpage', randomImageFirst.id]">
+      <img [src]="randomImageFirst.photo" [alt]="randomImageFirst.id" class="randomImagePath">
+    </a>
   </div>
   <div id="card" class="cardSecond">
-          <img [src]="randomImageSecond" alt="cardSecond" class="randomImagePath"> 
+    <a [routerLink]="['/cardpage', randomImageSecond.id]">
+      <img [src]="randomImageSecond.photo" [alt]="randomImageSecond.id" class="randomImagePath">
+    </a>
   </div>
   <div id="card" class="cardThird">
-          <img [src]="randomImageThird" alt="cardThird" class="randomImagePath">
+    <a [routerLink]="['/cardpage', randomImageThird.id]">
+      <img [src]="randomImageThird.photo" [alt]="randomImageThird.id" class="randomImagePath">
+    </a>
   </div>
 </div>
